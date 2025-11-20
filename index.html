@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Адаптивный сайт - Главная</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page">
+        <!-- Skip-link для доступности -->
+        <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+        
+        <!-- Sticky header -->
+        <header class="header">
+            <nav class="nav" aria-label="Основная навигация">
+                <div class="nav__container">
+                    <a href="#" class="nav__logo">Логотип</a>
+                    <ul class="nav__menu">
+                        <li><a href="index.html" class="nav__link">Главная</a></li>
+                        <li><a href="projects.html" class="nav__link">Проекты</a></li>
+                        <li><a href="diary.html" class="nav__link">Дневник</a></li>
+                        <li><a href="contacts.html" class="nav__link">Контакты</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main id="main" class="main">
+            <!-- Герой-секция -->
+            <section class="hero">
+                <div class="hero__container">
+                    <div class="hero__content">
+                        <h1 class="hero__title">Добро пожаловать</h1>
+                        <p class="hero__subtitle">Изучаем адаптивную вёрстку</p>
+                    </div>
+                    <figure class="hero__image">
+                        <div class="placeholder-image">
+                            <span>Здесь будет адаптивное изображение</span>
+                        </div>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- Секция проектов с Grid -->
+            <section class="projects-preview">
+                <div class="projects-preview__container">
+                    <h2 class="section-title">Наши проекты</h2>
+                    <div class="projects-preview__grid">
+                        <article class="project-card">
+                            <h3 class="project-card__title">Проект 1</h3>
+                            <p class="project-card__description">Описание первого проекта с адаптивной вёрсткой</p>
+                        </article>
+                        <article class="project-card">
+                            <h3 class="project-card__title">Проект 2</h3>
+                            <p class="project-card__description">Второй проект с использованием современных CSS технологий</p>
+                        </article>
+                        <article class="project-card">
+                            <h3 class="project-card__title">Проект 3</h3>
+                            <p class="project-card__description">Третий проект демонстрирует работу с Grid и Flexbox</p>
+                        </article>
+                        <article class="project-card">
+                            <h3 class="project-card__title">Проект 4</h3>
+                            <p class="project-card__description">Четвертый проект показывает адаптивные изображения</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция с адаптивными изображениями -->
+            <section class="adaptive-images">
+                <div class="adaptive-images__container">
+                    <h2 class="section-title">Техники адаптивных изображений</h2>
+                    
+                    <!-- Техника 1: Базовое адаптивное изображение -->
+                    <div class="technique">
+                        <h3>1. Базовое адаптивное изображение</h3>
+                        <div class="image-container">
+                            <div class="placeholder-image">
+                                <span>Адаптивное изображение</span>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <h4>Что происходит:</h4>
+                            <ul>
+                                <li>Изображение занимает 100% ширины контейнера</li>
+                                <li>Высота автоматически рассчитывается для сохранения пропорций</li>
+                                <li>Работает на всех устройствах</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Техника 5: Object-fit свойства -->
+                    <div class="technique">
+                        <h3>2. Object-fit свойства</h3>
+                        <div class="object-fit-demo">
+                            <div class="object-fit-item">
+                                <div class="placeholder-image object-fit-cover">
+                                    <span>cover</span>
+                                </div>
+                                <span>object-fit: cover</span>
+                            </div>
+                            <div class="object-fit-item">
+                                <div class="placeholder-image object-fit-contain">
+                                    <span>contain</span>
+                                </div>
+                                <span>object-fit: contain</span>
+                            </div>
+                            <div class="object-fit-item">
+                                <div class="placeholder-image object-fit-fill">
+                                    <span>fill</span>
+                                </div>
+                                <span>object-fit: fill</span>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <h4>Что происходит:</h4>
+                            <ul>
+                                <li><strong>cover</strong> - заполняет контейнер, обрезая края</li>
+                                <li><strong>contain</strong> - вписывает полностью, могут быть поля</li>
+                                <li><strong>fill</strong> - растягивает, искажая пропорции</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Техника 6: Адаптивная галерея -->
+                    <div class="technique">
+                        <h3>3. Адаптивная галерея</h3>
+                        <div class="gallery">
+                            <div class="gallery__item">
+                                <div class="placeholder-image">
+                                    <span>Изобр. 1</span>
+                                </div>
+                            </div>
+                            <div class="gallery__item">
+                                <div class="placeholder-image">
+                                    <span>Изобр. 2</span>
+                                </div>
+                            </div>
+                            <div class="gallery__item">
+                                <div class="placeholder-image">
+                                    <span>Изобр. 3</span>
+                                </div>
+                            </div>
+                            <div class="gallery__item">
+                                <div class="placeholder-image">
+                                    <span>Изобр. 4</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <h4>Что происходит:</h4>
+                            <ul>
+                                <li><strong>На десктопах:</strong> 4 изображения в ряд</li>
+                                <li><strong>На планшетах:</strong> 2 изображения в ряд</li>
+                                <li><strong>На мобильных:</strong> 1 изображение в ряд</li>
+                                <li>Автоматическое перестроение сетки</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__container">
+                <p>&copy; 2025 Гревцева Алина Анатольевна. Все права защищены.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
