@@ -1,4 +1,4 @@
-/* ===== БАЗОВЫЕ СТИЛИ ===== */
+/* ===== БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ (Практика 15) ===== */
 :root {
     color-scheme: light dark;
     --primary-color: #2563eb;
@@ -10,6 +10,7 @@
     --border-color: #e2e8f0;
     --shadow: 0 1px 3px rgba(0,0,0,.1);
     --shadow-lg: 0 10px 15px -3px rgba(0,0,0,.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0,0,0,.1);
     --radius: 0.5rem;
     --radius-lg: 0.75rem;
     --space-xs: 0.5rem;
@@ -38,7 +39,7 @@ body {
     color: var(--text-color);
 }
 
-/* ===== КОРНЕВОЙ КОНТЕЙНЕР ===== */
+/* ===== КОРНЕВОЙ КОНТЕЙНЕР (Практика 15) ===== */
 .page {
     min-height: 100vh;
     min-height: 100svh;
@@ -51,7 +52,7 @@ main {
     flex: 1;
 }
 
-/* ===== ДОСТУПНОСТЬ ===== */
+/* ===== ДОСТУПНОСТЬ (Практика 15) ===== */
 .skip-link {
     position: absolute;
     left: var(--space-md);
@@ -79,7 +80,7 @@ a, button, input, textarea {
     outline-offset: 2px;
 }
 
-/* Большие цели для touch-устройств */
+/* Большие цели для touch-устройств (Практика 15) */
 @media (pointer: coarse) {
     a, button, .nav__link {
         min-height: 44px;
@@ -87,7 +88,19 @@ a, button, input, textarea {
     }
 }
 
-/* ===== HEADER И NAVIGATION ===== */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ===== HEADER И NAVIGATION (Практика 15) ===== */
 .header {
     position: sticky;
     top: 0;
@@ -139,7 +152,7 @@ a, button, input, textarea {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* ===== ГЕРОЙ СЕКЦИЯ ===== */
+/* ===== ГЕРОЙ СЕКЦИЯ (Практика 15 + 16) ===== */
 .hero {
     padding: var(--space-2xl) var(--space-md);
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -170,16 +183,16 @@ a, button, input, textarea {
     opacity: 0.9;
 }
 
-.placeholder-image {
-    width: 200px;
-    height: 200px;
-    background: rgba(255, 255, 255, 0.2);
+.hero__image {
+    margin: 0;
+}
+
+.hero__photo {
+    inline-size: 200px;
+    block-size: auto;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 500;
+    object-fit: cover;
+    box-shadow: var(--shadow-xl);
 }
 
 /* ===== ОБЩИЕ СТИЛИ СЕКЦИЙ ===== */
@@ -190,17 +203,19 @@ a, button, input, textarea {
 }
 
 .projects-preview,
+.projects-area,
 .adaptive-images {
     padding: var(--space-2xl) var(--space-md);
 }
 
 .projects-preview__container,
+.projects-area__container,
 .adaptive-images__container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* ===== GRID СЕТКА ===== */
+/* ===== GRID СЕТКА (Практика 15) ===== */
 .projects-preview__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
@@ -218,7 +233,7 @@ a, button, input, textarea {
 
 .project-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-xl);
 }
 
 .project-card__title {
@@ -237,11 +252,112 @@ a, button, input, textarea {
     overflow-wrap: anywhere;
 }
 
-/* ===== СТИЛИ ДЛЯ АДАПТИВНЫХ ИЗОБРАЖЕНИЙ ===== */
+/* ===== КОНТЕЙНЕРНЫЕ ЗАПРОСЫ (Практика 15) ===== */
+.projects-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+}
+
+@supports (container-type: inline-size) {
+    .projects-area {
+        container-type: inline-size;
+        container-name: projects;
+    }
+    
+    @container projects (min-width: 640px) {
+        .projects-list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @container projects (min-width: 960px) {
+        .projects-list {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+/* ===== АДАПТИВНЫЕ ИЗОБРАЖЕНИЯ (Практика 16) ===== */
+
+/* Базовое адаптивное изображение */
+.responsive-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius);
+}
+
+/* Retina изображение */
+.retina-image {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Object-fit демонстрация */
+.object-fit-demo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.object-fit-item {
+    text-align: center;
+}
+
+.object-fit-item img {
+    width: 100%;
+    height: 200px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius);
+    margin-bottom: var(--space-sm);
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.object-fit-contain {
+    object-fit: contain;
+    background: var(--bg-color);
+}
+
+.object-fit-fill {
+    object-fit: fill;
+}
+
+/* Адаптивная галерея */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.gallery__item {
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+.gallery__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery__image:hover {
+    transform: scale(1.05);
+}
+
+/* Стили для техник адаптивных изображений */
 .technique {
     margin-bottom: var(--space-2xl);
     padding: var(--space-xl);
-    background: var(--bg-color);
+    background: var(--surface-color);
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-color);
 }
@@ -257,63 +373,7 @@ a, button, input, textarea {
     border: 2px dashed var(--border-color);
     border-radius: var(--radius);
     padding: var(--space-md);
-    background: var(--surface-color);
-}
-
-.image-container .placeholder-image {
-    width: 100%;
-    height: 200px;
-    border-radius: var(--radius);
-    background: var(--primary-color);
-    color: white;
-}
-
-/* Object-fit демонстрация */
-.object-fit-demo {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-lg);
-    margin-bottom: var(--space-lg);
-}
-
-.object-fit-item {
-    text-align: center;
-}
-
-.object-fit-item .placeholder-image {
-    width: 100%;
-    height: 150px;
-    margin-bottom: var(--space-sm);
-}
-
-.object-fit-cover {
-    border-radius: var(--radius);
-}
-
-.object-fit-contain {
-    border-radius: var(--radius);
-    background: var(--primary-dark) !important;
-}
-
-.object-fit-fill {
-    border-radius: var(--radius);
-    background: var(--primary-color) !important;
-}
-
-/* Адаптивная галерея */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-lg);
-    margin-bottom: var(--space-lg);
-}
-
-.gallery__item .placeholder-image {
-    width: 100%;
-    height: 120px;
-    border-radius: var(--radius);
-    background: var(--primary-color);
-    color: white;
+    background: var(--bg-color);
 }
 
 /* Блоки с объяснениями */
@@ -338,7 +398,7 @@ a, button, input, textarea {
     padding-left: var(--space-sm);
 }
 
-/* ===== FOOTER ===== */
+/* ===== FOOTER (Практика 15) ===== */
 .footer {
     background: var(--text-color);
     color: white;
@@ -353,7 +413,7 @@ a, button, input, textarea {
     padding-bottom: calc(var(--space-md) + env(safe-area-inset-bottom));
 }
 
-/* ===== АДАПТИВНОСТЬ ===== */
+/* ===== АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ ===== */
 @media (max-width: 768px) {
     .hero__container {
         grid-template-columns: 1fr;
@@ -378,10 +438,6 @@ a, button, input, textarea {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
-    
-    .technique {
-        padding: var(--space-lg);
-    }
 }
 
 @media (max-width: 480px) {
@@ -399,7 +455,7 @@ a, button, input, textarea {
     }
 }
 
-/* ===== ТЕМНАЯ ТЕМА ===== */
+/* ===== ТЕМНАЯ ТЕМА (Практика 15) ===== */
 @media (prefers-color-scheme: dark) {
     :root {
         --text-color: #e2e8f0;
@@ -410,7 +466,7 @@ a, button, input, textarea {
     }
 }
 
-/* ===== СНИЖЕНИЕ ДВИЖЕНИЯ ===== */
+/* ===== СНИЖЕНИЕ ДВИЖЕНИЯ (Практика 15) ===== */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation: none !important;
@@ -419,5 +475,9 @@ a, button, input, textarea {
     
     .project-card:hover {
         transform: none;
+    }
+    
+    .gallery__image {
+        transition: none;
     }
 }
