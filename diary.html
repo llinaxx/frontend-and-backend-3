@@ -3,41 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Дневник - Адаптивный сайт</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Дневник разработки - Портфолио</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <div class="page">
-        <a class="skip-link" href="#main">Перейти к основному содержимому</a>
-        
-        <header class="header">
-            <nav class="nav" aria-label="Основная навигация">
-                <div class="nav__container">
-                    <a href="index.html" class="nav__logo">АдаптивныйСайт</a>
-                    <ul class="nav__menu">
-                        <li><a href="index.html" class="nav__link">Главная</a></li>
-                        <li><a href="projects.html" class="nav__link">Проекты</a></li>
-                        <li><a href="diary.html" class="nav__link">Дневник</a></li>
-                        <li><a href="contacts.html" class="nav__link">Контакты</a></li>
-                    </ul>
-                </div>
+    <a href="#main" class="skip-link">Перейти к содержанию</a>
+    
+    <div class="page-wrapper">
+        <header>
+            <nav aria-label="Основная навигация">
+                <a href="index.html">Главная</a>
+                <a href="projects.html">Проекты</a>
+                <a href="diary.html">Дневник</a>
+                <a href="contacts.html">Контакты</a>
             </nav>
         </header>
-
-        <main id="main" class="main">
-            <section class="projects-page">
-                <div class="projects-page__container">
-                    <h1 class="section-title">Дневник разработки</h1>
-                    <p style="text-align: center; color: var(--text-light);">Страница в разработке</p>
+        
+        <main id="main">
+            <section class="diary-hero">
+                <h1>Дневник разработки</h1>
+                <p class="diary-subtitle">Отслеживание прогресса и заметки по созданию проектов</p>
+            </section>
+            
+            <section class="diary-entries">
+                <article class="diary-entry">
+                    <div class="entry-date">20 дек</div>
+                    <div class="entry-content">
+                        <h2>Завершил разработку Математического тренажера ✓</h2>
+                        <p>Реализовал все основные функции: генерацию случайных примеров, таймер, систему подсчета очков и разные уровни сложности. Добавил анимации для правильных/неправильных ответов.</p>
+                        <div class="entry-tags">
+                            <span class="tag-completed">JavaScript ✓</span>
+                            <span class="tag-completed">Bootstrap ✓</span>
+                            <span class="tag-completed">Анимации CSS ✓</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="diary-entry">
+                    <div class="entry-date">15 дек</div>
+                    <div class="entry-content">
+                        <h2>Добавил локальное хранение в Todo-приложение ✓</h2>
+                        <p>Интегрировал LocalStorage API для сохранения задач между сессиями. Реализовал фильтрацию по статусу (все/активные/выполненные) и возможность редактирования существующих задач.</p>
+                        <div class="entry-tags">
+                            <span class="tag-completed">LocalStorage API ✓</span>
+                            <span class="tag-completed">JavaScript ✓</span>
+                            <span class="tag-completed">UI/UX ✓</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="diary-entry">
+                    <div class="entry-date">10 дек</div>
+                    <div class="entry-content">
+                        <h2>Работа над инженерным калькулятором в прогрессе</h2>
+                        <p>Реализовал базовые арифметические операции и оформление интерфейса. В процессе добавления научных функций (тригонометрия, логарифмы) и истории вычислений.</p>
+                        <div class="entry-tags">
+                            <span class="tag-in-progress">Math.js</span>
+                            <span class="tag-completed">HTML/CSS ✓</span>
+                            <span class="tag-in-progress">Расширенные функции</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="diary-entry">
+                    <div class="entry-date">05 дек</div>
+                    <div class="entry-content">
+                        <h2>Начал разработку трех учебных проектов</h2>
+                        <p>Определил концепции и создал базовую структуру для Математического тренажера, Todo-приложения и Калькулятора. Подготовил макеты и начал верстку основных компонентов.</p>
+                        <div class="entry-tags">
+                            <span class="tag-completed">Планирование ✓</span>
+                            <span class="tag-completed">Верстка ✓</span>
+                            <span class="tag-completed">Прототипирование ✓</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            
+            <section class="projects-progress">
+                <h2>Прогресс по проектам</h2>
+                <div class="progress-cards">
+                    <div class="progress-card">
+                        <h3>Математический тренажер</h3>
+                        <div class="progress-container">
+                            <div class="progress-bar" data-percent="100"></div>
+                        </div>
+                        <span class="progress-percent">100% - Завершен</span>
+                        <div class="progress-tags">
+                            <span>JavaScript</span>
+                            <span>Bootstrap</span>
+                            <span>Game Logic</span>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-card">
+                        <h3>Todo-приложение</h3>
+                        <div class="progress-container">
+                            <div class="progress-bar" data-percent="95"></div>
+                        </div>
+                        <span class="progress-percent">95% - Финальные правки</span>
+                        <div class="progress-tags">
+                            <span>LocalStorage</span>
+                            <span>CRUD</span>
+                            <span>Фильтрация</span>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-card">
+                        <h3>Инженерный калькулятор</h3>
+                        <div class="progress-container">
+                            <div class="progress-bar" data-percent="70"></div>
+                        </div>
+                        <span class="progress-percent">70% - В разработке</span>
+                        <div class="progress-tags">
+                            <span>Math.js</span>
+                            <span>Научные функции</span>
+                            <span>История</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="skills-progress">
+                <h2>Развитие навыков</h2>
+                <div class="skill-item">
+                    <div class="skill-label">JavaScript / DOM Manipulation</div>
+                    <div class="progress-container">
+                        <div class="progress-bar" data-percent="85"></div>
+                    </div>
+                    <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">Адаптивная верстка</div>
+                    <div class="progress-container">
+                        <div class="progress-bar" data-percent="90"></div>
+                    </div>
+                    <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">Работа с API / LocalStorage</div>
+                    <div class="progress-container">
+                        <div class="progress-bar" data-percent="80"></div>
+                    </div>
+                    <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">Проектирование UI/UX</div>
+                    <div class="progress-container">
+                        <div class="progress-bar" data-percent="75"></div>
+                    </div>
+                    <span class="skill-percent">75%</span>
                 </div>
             </section>
         </main>
-
-        <footer class="footer">
-            <div class="footer__container">
-                <p>&copy; 2025 Практические занятия 15-16.</p>
-            </div>
+        
+        <footer>
+            <p>© 2025 Портфолио</p>
         </footer>
     </div>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>

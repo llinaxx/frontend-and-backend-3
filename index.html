@@ -1,258 +1,257 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Адаптивный сайт - Практика 15-16</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Портфолио</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <div class="page">
-        <!-- Skip-link для доступности (Практика 15) -->
-        <a class="skip-link" href="#main">Перейти к основному содержимому</a>
-        
-        <!-- Sticky header с safe areas (Практика 15) -->
+  <a href="#main" class="skip-link">Перейти к содержанию</a>
+
+  <div class="page-wrapper">
+    <header>
+      <nav aria-label="Основная навигация">
+        <a href="index.html">Главная</a>
+        <a href="projects.html">Проекты</a>
+        <a href="diary.html">Дневник</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero">
+        <img src="image/avatar.jpg" alt="Фото студента" width="200" height="200" fetchpriority="high">
+        <h1>Портфолио</h1>
+      </section>
+
+      <!-- КРАТКОЕ ПОРТФОЛИО -->
+      <section class="portfolio-section">
+        <div class="portfolio-header">
+          <h2>Портфолио</h2>
+          <button class="download-btn" onclick="downloadPortfolio()">📄 Скачать</button>
+        </div>
+      </section>
+
+      <!-- НАВЫКИ -->
+      <section class="skills">
+        <div class="skill-item">
+          <div class="skill-label">HTML/CSS</div>
+          <div class="progress-container">
+            <div class="progress-bar" data-percent="90"></div>
+          </div>
+          <span class="skill-percent">90%</span>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label">JavaScript</div>
+          <div class="progress-container">
+            <div class="progress-bar" data-percent="80"></div>
+          </div>
+          <span class="skill-percent">80%</span>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label">Bootstrap</div>
+          <div class="progress-container">
+            <div class="progress-bar" data-percent="85"></div>
+          </div>
+          <span class="skill-percent">85%</span>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label">React</div>
+          <div class="progress-container">
+            <div class="progress-bar" data-percent="60"></div>
+          </div>
+          <span class="skill-percent">60%</span>
+        </div>
+      </section>
+
+      <!-- ПРОЕКТЫ НА ГЛАВНОЙ -->
+      <section class="projects-preview" style="container-type: inline-size; container-name: projects">
+        <h2>Проекты</h2>
+        <div class="projects-grid">
+          <article class="project-card">
+            <img src="image/math-trainer.png" alt="Математический тренажер" loading="lazy">
+            <div class="project-content">
+              <h3>Математический тренажер</h3>
+              <p>Интерактивное приложение для тренировки математических навыков с различными уровнями сложности</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="image/todo-app.png" alt="Todo-приложение" loading="lazy">
+            <div class="project-content">
+              <h3>Todo-приложение</h3>
+              <p>Приложение для управления задачами с возможностью добавления, удаления и отметки выполненных дел</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="image/calculator.png" alt="Калькулятор" loading="lazy">
+            <div class="project-content">
+              <h3>Калькулятор</h3>
+              <p>Функциональный калькулятор с поддержкой основных математических операций и дополнительными функциями</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ПРАКТИКА 16: РАБОТА С ИЗОБРАЖЕНИЯМИ -->
+      <section class="section practice-16 container">
         <header class="header">
-            <nav class="nav" aria-label="Основная навигация">
-                <div class="nav__container">
-                    <a href="index.html" class="nav__logo">АдаптивныйСайт</a>
-                    <ul class="nav__menu">
-                        <li><a href="index.html" class="nav__link">Главная</a></li>
-                        <li><a href="projects.html" class="nav__link">Проекты</a></li>
-                        <li><a href="diary.html" class="nav__link">Дневник</a></li>
-                        <li><a href="contacts.html" class="nav__link">Контакты</a></li>
-                    </ul>
-                </div>
-            </nav>
+          <h1 class="header-title">Работа с изображениями</h1>
+          <p class="header-subtitle">
+            Responsive img, picture, object-fit, retina и галерея на CSS Grid
+          </p>
         </header>
 
-        <main id="main" class="main">
-            <!-- Герой-секция с адаптивными изображениями -->
-            <section class="hero">
-                <div class="hero__container">
-                    <div class="hero__content">
-                        <h1 class="hero__title">Практика 15-16</h1>
-                        <p class="hero__subtitle">Комбинирование методов адаптивной вёрстки и работа с изображениями</p>
-                    </div>
-                    <figure class="hero__image">
-                        <picture>
-                            <!-- Современные форматы (Практика 16) -->
-                            <source type="image/avif" 
-                                    srcset="images/hero-150.avif 150w, images/hero-200.avif 200w, images/hero-300.avif 300w"
-                                    sizes="200px">
-                            <source type="image/webp" 
-                                    srcset="images/hero-150.webp 150w, images/hero-200.webp 200w, images/hero-300.webp 300w"
-                                    sizes="200px">
-                            <!-- Фолбэк (Практика 15) -->
-                            <img class="hero__photo"
-                                src="images/hero-200.jpg"
-                                srcset="images/hero-150.jpg 150w, images/hero-200.jpg 200w, images/hero-300.jpg 300w"
-                                sizes="200px"
-                                width="200" height="200"
-                                alt="Портрет студента"
-                                fetchpriority="high">
-                        </picture>
-                    </figure>
-                </div>
-            </section>
+        <!-- 1. Обычное responsive‑изображение -->
+        <section class="section">
+          <h2 class="section-title">1. Обычное responsive‑изображение</h2>
+          <div class="image-container">
+            <img
+              src="pictures/math-trainer.jpg"
+              alt="Математический тренажер — базовый пример"
+              class="responsive-image">
+          </div>
+          <div class="explanation">
+            <h3>Что показываем</h3>
+            <ul>
+              <li>Интерфейс математического тренажера с примерами задач</li>
+              <li>Изображение адаптируется под размер экрана</li>
+            </ul>
+          </div>
+        </section>
 
-            <!-- Секция проектов с Grid (Практика 15) -->
-            <section class="projects-preview">
-                <div class="projects-preview__container">
-                    <h2 class="section-title">Адаптивная Grid-сетка</h2>
-                    <div class="projects-preview__grid">
-                        <article class="project-card">
-                            <h3 class="project-card__title">Проект 1</h3>
-                            <p class="project-card__description">Автоматическая адаптация колонок с auto-fit и minmax</p>
-                        </article>
-                        <article class="project-card">
-                            <h3 class="project-card__title">Проект 2</h3>
-                            <p class="project-card__description">Плавные переходы и hover-эффекты</p>
-                        </article>
-                        <article class="project-card">
-                            <h3 class="project-card__title">Проект 3</h3>
-                            <p class="project-card__description">Минимальная ширина колонок 18rem</p>
-                        </article>
-                        <article class="project-card">
-                            <h3 class="project-card__title">Проект 4</h3>
-                            <p class="project-card__description">Автоматические брейкпоинты без медиазапросов</p>
-                        </article>
-                    </div>
-                </div>
-            </section>
+        <!-- 2. Picture -->
+        <section class="section">
+          <h2 class="section-title">2. Picture element</h2>
+          <div class="image-container">
+            <picture class="picture-demo">
+              <source srcset="pictures/todo-app.webp" type="image/webp">
+              <img
+                src="pictures/todo-app.jpg"
+                alt="Todo-приложение — пример picture"
+                class="responsive-image">
+            </picture>
+          </div>
+          <div class="explanation">
+            <h3>Что показываем</h3>
+            <ul>
+              <li>Интерфейс Todo-приложения с задачами</li>
+              <li>Оптимизированный WebP формат с fallback на JPEG</li>
+            </ul>
+          </div>
+        </section>
 
-            <!-- Секция с контейнерными запросами (Практика 15) -->
-            <section class="projects-area">
-                <div class="projects-area__container">
-                    <h2 class="section-title">Контейнерные запросы</h2>
-                    <div class="projects-list">
-                        <article class="project-card">
-                            <h3 class="project-card__title">Компонент 1</h3>
-                            <p class="project-card__description">Адаптируется к ширине контейнера, а не окна</p>
-                        </article>
-                        <article class="project-card">
-                            <h3 class="project-card__title">Компонент 2</h3>
-                            <p class="project-card__description">@container вместо @media для локальной адаптивности</p>
-                        </article>
-                        <article class="project-card">
-                            <h3 class="project-card__title">Компонент 3</h3>
-                            <p class="project-card__description">Прогрессивное улучшение через @supports</p>
-                        </article>
-                    </div>
-                </div>
-            </section>
+        <!-- 3. Разные экраны -->
+        <section class="section">
+          <h2 class="section-title">3. Разные экраны (desktop / tablet / mobile)</h2>
+          <div class="image-container">
+            <picture class="picture-demo">
+              <source media="(min-width: 1200px)" srcset="pictures/calculator-desktop.jpg">
+              <source media="(min-width: 768px)" srcset="pictures/calculator-tablet.jpg">
+              <img
+                src="pictures/calculator-mobile.jpg"
+                alt="Калькулятор на разных устройствах"
+                class="responsive-image">
+            </picture>
+          </div>
+          <div class="explanation">
+            <h3>Что показываем</h3>
+            <ul>
+              <li>Калькулятор с расширенными функциями для десктопа</li>
+              <li>Упрощенный интерфейс для планшетов</li>
+              <li>Мобильная версия калькулятора</li>
+            </ul>
+          </div>
+        </section>
 
-            <!-- Секция с техниками адаптивных изображений (Практика 16) -->
-            <section class="adaptive-images">
-                <div class="adaptive-images__container">
-                    <h2 class="section-title">Техники адаптивных изображений</h2>
-                    
-                    <!-- Техника 1: Базовое адаптивное изображение -->
-                    <div class="technique">
-                        <h3>1. Базовое адаптивное изображение</h3>
-                        <div class="image-container">
-                            <img src="images/landscape.jpg" 
-                                 alt="Красивый пейзаж с горами и озером" 
-                                 class="responsive-image">
-                        </div>
-                        <div class="explanation">
-                            <h4>Что происходит:</h4>
-                            <ul>
-                                <li>Изображение занимает 100% ширины контейнера</li>
-                                <li>Высота автоматически рассчитывается для сохранения пропорций</li>
-                                <li>Работает на всех устройствах</li>
-                            </ul>
-                        </div>
-                    </div>
+        <!-- 4. Retina -->
+        <section class="section">
+          <h2 class="section-title">4. Retina‑пример</h2>
+          <div class="image-container">
+            <img
+              src="pictures/math-trainer-icon.jpg"
+              srcset="pictures/math-trainer-icon.jpg 1x, pictures/math-trainer-icon@2x.jpg 2x"
+              alt="Иконка математического тренажера"
+              class="retina-image">
+          </div>
+          <div class="explanation">
+            <h3>Что показываем</h3>
+            <ul>
+              <li>Детализированная иконка для Retina-экранов</li>
+              <li>Использование <code>srcset</code> с 1x и 2x плотностью пикселей</li>
+            </ul>
+          </div>
+        </section>
 
-                    <!-- Техника 2: Picture element с форматами -->
-                    <div class="technique">
-                        <h3>2. Picture element с форматами</h3>
-                        <div class="image-container">
-                            <picture>
-                                <source srcset="images/portrait.webp" type="image/webp">
-                                <source srcset="images/portrait.jpg" type="image/jpeg">
-                                <img src="images/portrait.jpg" 
-                                     alt="Портрет человека" 
-                                     class="responsive-image">
-                            </picture>
-                        </div>
-                        <div class="explanation">
-                            <h4>Что происходит:</h4>
-                            <ul>
-                                <li>Браузер выбирает лучший формат (WebP или JPEG)</li>
-                                <li>Автоматическое переключение между форматами</li>
-                                <li>Фолбэк для старых браузеров</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Техника 3: Разные изображения для разных размеров экрана -->
-                    <div class="technique">
-                        <h3>3. Разные изображения для разных экранов</h3>
-                        <div class="image-container">
-                            <picture>
-                                <source media="(min-width: 1200px)" srcset="images/wide-desktop.jpg">
-                                <source media="(min-width: 768px)" srcset="images/tablet.jpg">
-                                <img src="images/mobile.jpg" 
-                                     alt="Адаптивное изображение для разных устройств" 
-                                     class="responsive-image">
-                            </picture>
-                        </div>
-                        <div class="explanation">
-                            <h4>Что происходит:</h4>
-                            <ul>
-                                <li><strong>Десктопы:</strong> wide-desktop.jpg (1200px+)</li>
-                                <li><strong>Планшеты:</strong> tablet.jpg (768px-1199px)</li>
-                                <li><strong>Мобильные:</strong> mobile.jpg (до 767px)</li>
-                                <li>Браузер сам выбирает подходящее изображение</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Техника 4: Retina display поддержка -->
-                    <div class="technique">
-                        <h3>4. Поддержка Retina дисплеев</h3>
-                        <div class="image-container">
-                            <img src="images/icon@1x.png"
-                                 srcset="images/icon@1x.png 1x, images/icon@2x.png 2x"
-                                 alt="Иконка с поддержкой Retina"
-                                 class="retina-image">
-                        </div>
-                        <div class="explanation">
-                            <h4>Что происходит:</h4>
-                            <ul>
-                                <li><strong>Обычные экраны:</strong> icon@1x.png</li>
-                                <li><strong>Retina экраны:</strong> icon@2x.png (в 2 раза четче)</li>
-                                <li>Автоматическое определение плотности пикселей</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Техника 5: Object-fit свойства -->
-                    <div class="technique">
-                        <h3>5. Object-fit свойства</h3>
-                        <div class="object-fit-demo">
-                            <div class="object-fit-item">
-                                <img src="images/square.jpg" alt="Cover пример" class="object-fit-cover">
-                                <span>object-fit: cover</span>
-                            </div>
-                            <div class="object-fit-item">
-                                <img src="images/square.jpg" alt="Contain пример" class="object-fit-contain">
-                                <span>object-fit: contain</span>
-                            </div>
-                            <div class="object-fit-item">
-                                <img src="images/square.jpg" alt="Fill пример" class="object-fit-fill">
-                                <span>object-fit: fill</span>
-                            </div>
-                        </div>
-                        <div class="explanation">
-                            <h4>Что происходит:</h4>
-                            <ul>
-                                <li><strong>cover</strong> - заполняет контейнер, обрезая края</li>
-                                <li><strong>contain</strong> - вписывает полностью, могут быть поля</li>
-                                <li><strong>fill</strong> - растягивает, искажая пропорции</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Техника 6: Адаптивная галерея -->
-                    <div class="technique">
-                        <h3>6. Адаптивная галерея</h3>
-                        <div class="gallery">
-                            <div class="gallery__item">
-                                <img src="images/gallery1.jpg" alt="Горный пейзаж" class="gallery__image" loading="lazy">
-                            </div>
-                            <div class="gallery__item">
-                                <img src="images/gallery2.jpg" alt="Городской вид" class="gallery__image" loading="lazy">
-                            </div>
-                            <div class="gallery__item">
-                                <img src="images/gallery3.jpg" alt="Природа" class="gallery__image" loading="lazy">
-                            </div>
-                            <div class="gallery__item">
-                                <img src="images/gallery4.jpg" alt="Архитектура" class="gallery__image" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="explanation">
-                            <h4>Что происходит:</h4>
-                            <ul>
-                                <li><strong>На десктопах:</strong> 4 изображения в ряд</li>
-                                <li><strong>На планшетах:</strong> 2 изображения в ряд</li>
-                                <li><strong>На мобильных:</strong> 1 изображение в ряд</li>
-                                <li>Автоматическое перестроение сетки</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <div class="footer__container">
-                <p>&copy; 2025 Практические занятия 15-16.</p>
-                <p>Измените размер окна браузера чтобы увидеть адаптивность в действии!</p>
+        <!-- 5. Object-fit -->
+        <section class="section">
+          <h2 class="section-title">5. Object-fit</h2>
+          <div class="object-fit-demo">
+            <div class="object-fit-item">
+              <img src="pictures/todo-app-1.jpg" alt="Todo-приложение" class="object-fit-cover">
+              <span>object-fit: cover</span>
             </div>
-        </footer>
-    </div>
+            <div class="object-fit-item">
+              <img src="pictures/todo-app-1.jpg" alt="Todo-приложение" class="object-fit-contain">
+              <span>object-fit: contain</span>
+            </div>
+            <div class="object-fit-item">
+              <img src="pictures/todo-app-1.jpg" alt="Todo-приложение" class="object-fit-fill">
+              <span>object-fit: fill</span>
+            </div>
+          </div>
+          <div class="explanation">
+            <h3>Что показываем</h3>
+            <ul>
+              <li><strong>cover</strong> — интерфейс Todo-приложения с обрезкой</li>
+              <li><strong>contain</strong> — полный вид без обрезки</li>
+              <li><strong>fill</strong> — растянутый вид с искажением</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 6. Галерея -->
+        <section class="section">
+          <h2 class="section-title">6. Галерея проектов</h2>
+          <div class="gallery">
+            <div class="gallery-item">
+              <div class="gallery-image-container">
+                <img src="pictures/math-trainer-1.jpg" alt="Математический тренажер" class="gallery-image">
+              </div>
+            </div>
+            <div class="gallery-item">
+              <div class="gallery-image-container">
+                <img src="pictures/todo-app-2.jpg" alt="Todo-приложение" class="gallery-image">
+              </div>
+            </div>
+            <div class="gallery-item">
+              <div class="gallery-image-container">
+                <img src="pictures/calculator-1.jpg" alt="Калькулятор" class="gallery-image">
+              </div>
+            </div>
+            <div class="gallery-item">
+              <div class="gallery-image-container">
+                <img src="pictures/projects-collage.jpg" alt="Коллаж проектов" class="gallery-image">
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- КОНЕЦ ПРАКТИКИ 16 -->
+    </main>
+
+    <footer>
+      <p>© 2025 Портфолио</p>
+    </footer>
+  </div>
+
+  <script src="scripts/main.js"></script>
 </body>
 </html>

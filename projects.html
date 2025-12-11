@@ -1,57 +1,112 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Проекты - Адаптивный сайт</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Мои проекты</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <div class="page">
-        <a class="skip-link" href="#main">Перейти к основному содержимому</a>
-        
-        <header class="header">
-            <nav class="nav" aria-label="Основная навигация">
-                <div class="nav__container">
-                    <a href="index.html" class="nav__logo">АдаптивныйСайт</a>
-                    <ul class="nav__menu">
-                        <li><a href="index.html" class="nav__link">Главная</a></li>
-                        <li><a href="projects.html" class="nav__link">Проекты</a></li>
-                        <li><a href="diary.html" class="nav__link">Дневник</a></li>
-                        <li><a href="contacts.html" class="nav__link">Контакты</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+  <a href="#main" class="skip-link">Перейти к содержанию</a>
 
-        <main id="main" class="main">
-            <section class="projects-page">
-                <div class="projects-page__container">
-                    <h1 class="section-title">Наши проекты</h1>
-                    
-                    <div class="projects-preview__grid">
-                        <article class="project-card">
-                            <h3 class="project-card__title">Адаптивный лендинг</h3>
-                            <p class="project-card__description">Современный лендинг с использованием всех техник адаптивной вёрстки</p>
-                        </article>
-                        <article class="project-card">
-                            <h3 class="project-card__title">Интернет-магазин</h3>
-                            <p class="project-card__description">Полностью адаптивный интернет-магазин с корзиной</p>
-                        </article>
-                        <article class="project-card">
-                            <h3 class="project-card__title">Блог платформа</h3>
-                            <p class="project-card__description">Платформа для ведения блога с адаптивными изображениями</p>
-                        </article>
-                    </div>
-                </div>
-            </section>
-        </main>
+  <div class="page-wrapper">
+    <header>
+      <nav aria-label="Основная навигация">
+        <a href="index.html">Главная</a>
+        <a href="projects.html">Проекты</a>
+        <a href="diary.html">Дневник</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+    </header>
 
-        <footer class="footer">
-            <div class="footer__container">
-                <p>&copy; 2025 Практические занятия 15-16./p>
+    <main id="main">
+      <!-- HERO ПРОЕКТОВ -->
+      <section class="projects-hero">
+        <h1>Мои проекты</h1>
+        <p>Подборка учебных работ: веб‑сайты, приложения и интерфейсы, сделанные в рамках практики.</p>
+      </section>
+
+      <!-- ТЕГИ ТЕХНОЛОГИЙ -->
+      <section class="projects-list">
+        <div class="projects-tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Bootstrap</span>
+          <span>React</span>
+        </div>
+
+        <!-- СЕТКА КАРТОЧЕК ПРОЕКТОВ -->
+        <div class="projects-grid">
+          <article class="project-card">
+            <img src="image/math-trainer.png" alt="Интерфейс математического тренажера" loading="lazy">
+            <div class="project-content">
+              <h2>Математический тренажер</h2>
+              <p>Интерактивное веб-приложение для тренировки математических навыков с различными уровнями сложности, таймером и системой подсчета очков.</p>
+              <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Bootstrap</span>
+              </div>
+              <div class="project-features">
+                <span>Адаптивный дизайн</span>
+                <span>Таймер</span>
+                <span>Система очков</span>
+                <span>Разные уровни</span>
+              </div>
             </div>
-        </footer>
-    </div>
+          </article>
+
+          <article class="project-card">
+            <img src="image/todo-app.png" alt="Интерфейс Todo-приложения" loading="lazy">
+            <div class="project-content">
+              <h2>Todo-приложение</h2>
+              <p>Полнофункциональное приложение для управления задачами с возможностью добавления, редактирования, удаления и фильтрации задач, а также локальным хранением данных.</p>
+              <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>LocalStorage API</span>
+              </div>
+              <div class="project-features">
+                <span>Добавление задач</span>
+                <span>Редактирование</span>
+                <span>Фильтрация</span>
+                <span>Локальное хранение</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="image/calculator.png" alt="Интерфейс калькулятора" loading="lazy">
+            <div class="project-content">
+              <h2>Инженерный калькулятор</h2>
+              <p>Калькулятор с расширенными функциями, поддерживающий основные арифметические операции, математические функции и историю вычислений.</p>
+              <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Math.js</span>
+              </div>
+              <div class="project-features">
+                <span>Базовые операции</span>
+                <span>Научные функции</span>
+                <span>История вычислений</span>
+                <span>Темная тема</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Портфолио</p>
+    </footer>
+  </div>
+
+  <script src="scripts/main.js"></script>
 </body>
 </html>

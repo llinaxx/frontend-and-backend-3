@@ -3,41 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Контакты - Адаптивный сайт</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Контакты - Портфолио</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <div class="page">
-        <a class="skip-link" href="#main">Перейти к основному содержимому</a>
-        
-        <header class="header">
-            <nav class="nav" aria-label="Основная навигация">
-                <div class="nav__container">
-                    <a href="index.html" class="nav__logo">АдаптивныйСайт</a>
-                    <ul class="nav__menu">
-                        <li><a href="index.html" class="nav__link">Главная</a></li>
-                        <li><a href="projects.html" class="nav__link">Проекты</a></li>
-                        <li><a href="diary.html" class="nav__link">Дневник</a></li>
-                        <li><a href="contacts.html" class="nav__link">Контакты</a></li>
-                    </ul>
-                </div>
+    <a href="#main" class="skip-link">Перейти к содержанию</a>
+    
+    <div class="page-wrapper">
+        <header>
+            <nav aria-label="Основная навигация">
+                <a href="index.html">Главная</a>
+                <a href="projects.html">Проекты</a>
+                <a href="diary.html">Дневник</a>
+                <a href="contacts.html">Контакты</a>
             </nav>
         </header>
-
-        <main id="main" class="main">
-            <section class="projects-page">
-                <div class="projects-page__container">
-                    <h1 class="section-title">Контакты</h1>
-                    <p style="text-align: center; color: var(--text-light);">Страница в разработке</p>
+        
+        <main id="main">
+            <section class="contacts-hero">
+                <h1>Связь со мной</h1>
+                <p class="contacts-subtitle">Есть вопросы по проектам или хотите обсудить сотрудничество? Напишите мне!</p>
+                <div class="contacts-counter">Новые сообщения: 2/5</div>
+            </section>
+            
+            <section class="contacts-content">
+                <div class="contact-form">
+                    <h2>Написать мне</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="visually-hidden">Имя</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                placeholder="Ваше имя:" 
+                                required
+                                aria-required="true"
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="visually-hidden">Email</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="Ваш email:" 
+                                required
+                                aria-required="true"
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="visually-hidden">Тема сообщения</label>
+                            <select id="subject" name="subject" aria-label="Тема сообщения">
+                                <option value="">Выберите тему</option>
+                                <option value="projects">Вопрос по проектам</option>
+                                <option value="collaboration">Сотрудничество</option>
+                                <option value="feedback">Обратная связь</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="visually-hidden">Сообщение</label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                placeholder="Ваше сообщение:" 
+                                rows="6" 
+                                required
+                                aria-required="true"
+                            ></textarea>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <button type="submit" class="submit-btn">
+                                <span class="btn-icon">📨</span>
+                                Отправить сообщение
+                            </button>
+                            <p class="form-note">Обычно отвечаю в течение 24 часов</p>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h2>Мои контакты</h2>
+                    <ul class="contacts-list">
+                        <li class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <div class="contact-details">
+                                <strong>Email для связи</strong>
+                                <a href="mailto:dev.portfolio@example.com" class="contact-link">
+                                    dev.portfolio@example.com
+                                </a>
+                                <small>Рабочий email для всех вопросов</small>
+                            </div>
+                        </li>
+                        
+                        <li class="contact-item">
+                            <span class="contact-icon">💻</span>
+                            <div class="contact-details">
+                                <strong>GitHub профиль</strong>
+                                <a href="https://github.com/portfolio-dev" target="_blank" rel="noopener noreferrer" class="contact-link">
+                                    github.com/portfolio-dev
+                                </a>
+                                <small>Исходный код всех проектов</small>
+                            </div>
+                        </li>
+                        
+                        <li class="contact-item">
+                            <span class="contact-icon">📄</span>
+                            <div class="contact-details">
+                                <strong>Резюме и портфолио</strong>
+                                <a href="assets/portfolio-resume.pdf" class="contact-link" download>
+                                    📥 Скачать резюме (PDF)
+                                </a>
+                                <small>Полная версия с деталями проектов</small>
+                            </div>
+                        </li>
+                        
+                        <li class="contact-item">
+                            <span class="contact-icon">🔗</span>
+                            <div class="contact-details">
+                                <strong>Профили для связи</strong>
+                                <div class="social-links">
+                                    <a href="https://linkedin.com/in/portfolio-dev" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                    •
+                                    <a href="https://t.me/portfolio_dev" target="_blank" rel="noopener noreferrer">Telegram</a>
+                                    •
+                                    <a href="https://hh.ru/resume/portfolio" target="_blank" rel="noopener noreferrer">HH.ru</a>
+                                </div>
+                                <small>Дополнительные способы связи</small>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="contact-hours">
+                        <h3>Часы для связи</h3>
+                        <p>Пн–Пт: 10:00–18:00</p>
+                        <p class="hours-note">Отвечаю в рабочее время, выходные — по возможности</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="faq-section">
+                <h2>Частые вопросы</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>📁 Можно ли посмотреть код ваших проектов?</h3>
+                        <p>Да, все мои учебные проекты доступны на GitHub с открытым исходным кодом. Ссылка в разделе контактов выше.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>🤝 Готовы ли вы к сотрудничеству?</h3>
+                        <p>Да, открыт для учебных проектов, хакатонов и стажировок. Пишите на почту с описанием проекта.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>⏱️ Как быстро вы отвечаете?</h3>
+                        <p>Обычно отвечаю в течение 24 часов в рабочие дни. На выходных ответ может занять больше времени.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>📚 Можно ли использовать ваши проекты в обучении?</h3>
+                        <p>Конечно! Все проекты созданы для учебных целей и могут свободно использоваться для обучения.</p>
+                    </div>
                 </div>
             </section>
         </main>
-
-        <footer class="footer">
-            <div class="footer__container">
-                <p>&copy; 2025 Практические занятия 15-16.</p>
-            </div>
+        
+        <footer>
+            <p>© 2025 Портфолио разработчика</p>
+            <p class="footer-note">Свяжитесь со мной для обсуждения проектов или сотрудничества</p>
         </footer>
     </div>
+
+    <script src="scripts/main.js"></script>
+    <script>
+        // Обработка формы контактов
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Получаем данные формы
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // В реальном приложении здесь была бы отправка на сервер
+            // Для демонстрации просто показываем сообщение
+            alert(`Спасибо, ${name}! Ваше сообщение "${subject}" отправлено. Я свяжусь с вами на ${email} в ближайшее время.`);
+            
+            // Очищаем форму
+            this.reset();
+            
+            // Обновляем счетчик сообщений
+            const counter = document.querySelector('.contacts-counter');
+            if (counter) {
+                const current = parseInt(counter.textContent.match(/\d+/)[0]);
+                const newCount = Math.min(current + 1, 5);
+                counter.textContent = `Новые сообщения: ${newCount}/5`;
+            }
+        });
+        
+        // Добавляем стили для визуально скрытых элементов
+        const style = document.createElement('style');
+        style.textContent = `
+            .visually-hidden {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
+                border: 0;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
